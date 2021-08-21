@@ -1,0 +1,24 @@
+{% extends 'home.html' %}
+{% block content %}
+{% if data %}
+    <table class="table">
+  <thead class="table-light">
+    <th>Name</th>
+    <th>Id</th>
+    <th>Designation</th>
+    <th>Department</th>
+    <th>Email Id</th>
+    <th>Location</th>
+  </thead>
+  <tbody>
+    <td>{{data.name}}</td>
+    <td>{{data.id}}</td>
+    <td>{{data.designation}}</td>
+    <td>{{data.department}}</td>
+    <td>{{data.email_id}}</td>
+    <td>{{data.location}}</td>
+  </tbody>
+</table>
+</div>
+{% endif %}
+{% endblock content %}

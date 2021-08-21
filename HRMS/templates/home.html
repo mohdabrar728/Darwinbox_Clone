@@ -1,0 +1,110 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>HRMS Clone</title>
+    <style>
+      #clock:hover{
+      background-color:green;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-image: linear-gradient(73deg, #115eb4, #1676e2, #1aa5c9);">
+  <div class="container-fluid">
+    <a class="navbar-brand" style="background-color:white;" href="#"><img src='{% static "images/ojas.png" %}'></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="d-flex">
+      <form class="d-flex">
+        <button class='btn' id="clock">
+          <img src='{% static "images/clock.png" %}' width="24px" height="24px">
+        </button>
+      </form>
+      <form class="d-flex">
+        <button class='btn'>
+          <img src='{% static "images/profile.png" %}' width="24px" height="24px">
+        </button>
+      </form>
+      </div>
+    </div>
+</nav>
+    {% block content %}
+    <div class='container'>
+        <br>
+        <h3>My Access</h3>
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="card">
+                    <div class="card-body">
+                        <div style="border:1px solid grey;border-radius:15px;background-color:rgba(0,0,0,0.1)">
+                            <a class="btn" href="/employees">
+                                <img src='{% static "images/employees.png" %}'>
+                            </a>
+                        </div>
+
+                        <h3 class="fw-normal" align="center">employees</h3>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card">
+                    <div class="card-body">
+                        <div style="border:1px solid grey;border-radius:15px;background-color:rgba(0,0,0,0.1)">
+                            <a class="btn" href="/attendance">
+                                <img src='{% static "images/attendance.png" %}'>
+                            </a>
+                        </div>
+                        <h3 class="fw-normal" align="center">attendance</h3>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card">
+                    <div class="card-body">
+                        <div style="border:1px solid grey;border-radius:15px;background-color:rgba(0,0,0,0.1)">
+                            <a class="btn" href="/test">
+                                <img src='{% static "images/leaves.png" %}'>
+                            </a>
+                        </div>
+                        <h3 class="fw-normal" align="center">leaves</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card">
+                    <div class="card-body">
+                        <div style="border:1px solid grey;border-radius:15px;background-color:rgba(0,0,0,0.1)">
+                            <a class="btn" href="/test">
+                                <img src='{% static "images/calendar.png" %}'>
+                            </a>
+                        </div>
+                        <h3 class="fw-normal" align="center">calendar</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock content %}
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
