@@ -24,14 +24,24 @@
     <th>Location</th>
   </thead>
   <tbody>
-    <td>{{data.name}}</td>
-    <td>{{data.id}}</td>
-    <td>{{data.designation}}</td>
-    <td>{{data.department}}</td>
-    <td>{{data.email_id}}</td>
-    <td>{{data.location}}</td>
+{% for i in data %}
+    <td>{{i.name}}</td>
+    <td>{{i.id}}</td>
+    <td>{{i.designation}}</td>
+    <td>{{i.department}}</td>
+    <td>{{i.email_id}}</td>
+    <td>{{i.location}}</td>
+{% endfor %}
   </tbody>
 </table>
 </div>
+{% else %}
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <h1 class='alert alert-danger'>{{ message }}</h1>
+    {% endfor %}
+</ul>
+{% endif %}
 {% endif %}
 {% endblock content %}

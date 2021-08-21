@@ -3,22 +3,21 @@
 {% if data %}
     <table class="table">
   <thead class="table-light">
-    <th>Name</th>
-    <th>Id</th>
-    <th>Designation</th>
-    <th>Department</th>
-    <th>Email Id</th>
-    <th>Location</th>
+    <th>Date</th>
+    <th>Clock_in</th>
+    <th>Clock_out</th>
+    <th>Total Work Duration</th>
+    <th>Status</th>
   </thead>
   <tbody>
-    <td>{{data.name}}</td>
-    <td>{{data.id}}</td>
-    <td>{{data.designation}}</td>
-    <td>{{data.department}}</td>
-    <td>{{data.email_id}}</td>
-    <td>{{data.location}}</td>
+{% for i in data %}
+    <td>{{i.date}}</td>
+    <td>{{i.clock_in}}</td>
+    <td>{{i.clock_out}}</td>
+    <td>{{i.total_work_duration}}</td>
+    <td>{{i.status}}</td>
+{% endfor %}
   </tbody>
 </table>
-</div>
 {% endif %}
 {% endblock content %}

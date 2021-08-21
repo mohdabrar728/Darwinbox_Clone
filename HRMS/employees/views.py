@@ -3,6 +3,7 @@ from django.shortcuts import render
 from django.views.generic import TemplateView
 from .forms import EmployeeDetailsForms
 from .models import EmployeeDetails
+from django.contrib import messages
 
 
 # Create your views here.
@@ -16,5 +17,8 @@ class EmployeeSearch(TemplateView):
         return context
 
     def post(self, request):
-        data = EmployeeDetails.objects.get(name=request.POST.get('search_by_employee_name'))
+        name = request.POST.get('search_by_employee_name').title()
+        data = EmployeeDetails.objects.filter(name__contains=name)
+        messages.info(request, f'Employee Name "{name}" Not Found in Directory')
+        print(data)
         return render(request,'employees.html', {'form': EmployeeDetailsForms, 'data': data})
