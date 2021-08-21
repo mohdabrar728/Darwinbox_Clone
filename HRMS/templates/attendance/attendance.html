@@ -9,15 +9,15 @@
     <th>Total Work Duration</th>
     <th>Status</th>
   </thead>
+        {% for i in data %}
   <tbody>
-{% for i in data %}
     <td>{{i.date}}</td>
     <td>{{i.clock_in}}</td>
     <td>{{i.clock_out}}</td>
     <td>{{i.total_work_duration}}</td>
     <td>{{i.status}}</td>
-{% endfor %}
   </tbody>
+        {% endfor %}
 </table>
 {% endif %}
 {% endblock content %}

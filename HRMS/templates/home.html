@@ -24,7 +24,8 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="d-flex">
-      <form class="d-flex">
+      <form action="/clockinout" method="post" class="d-flex">
+          {% csrf_token %}
         <button class='btn' id="clock">
           <img src='{% static "images/clock.png" %}' width="24px" height="24px">
         </button>

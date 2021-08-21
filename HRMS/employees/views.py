@@ -21,4 +21,4 @@ class EmployeeSearch(TemplateView):
         data = EmployeeDetails.objects.filter(name__contains=name)
         messages.info(request, f'Employee Name "{name}" Not Found in Directory')
         print(data)
-        return render(request,'employees.html', {'form': EmployeeDetailsForms, 'data': data})
+        return render(request, 'employees.html', {'form': EmployeeDetailsForms, 'data': data})
