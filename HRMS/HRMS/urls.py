@@ -24,4 +24,5 @@ urlpatterns = [
     path('', include('calender.urls')),
     path('', include('leave.urls')),
     path('', include('credintial.urls')),
+    path('', include('chatbot.urls')),
 ]

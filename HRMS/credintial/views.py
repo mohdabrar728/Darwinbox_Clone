@@ -26,4 +26,4 @@ def user_login(request):
 # Logout
 def user_logout(request):
   logout(request)
-  return HttpResponseRedirect('/login')
+  return HttpResponseRedirect('/')
