@@ -1,6 +1,9 @@
 {% extends 'home.html' %}
 {% block content %}
 {% if data %}
+<div class="container">
+      <a class='' href="{% url 'home' %}">back</a>
+    <br><br>
     <table class="table">
   <thead class="table-light">
     <th>Date</th>
@@ -19,5 +22,6 @@
   </tbody>
         {% endfor %}
 </table>
+  </div>
 {% endif %}
 {% endblock content %}

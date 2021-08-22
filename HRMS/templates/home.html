@@ -4,6 +4,26 @@
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="{% static 'fonts/icomoon/style.css' %}">
+
+    <link href="{% static 'fullcalendar/packages/core/main.css'%}" rel='stylesheet' />
+    <link href="{% static 'fullcalendar/packages/daygrid/main.css' %}" rel='stylesheet' />
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+
+    <!-- Style -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
@@ -30,11 +50,17 @@
           <img src='{% static "images/clock.png" %}' width="24px" height="24px">
         </button>
       </form>
-      <form class="d-flex">
-        <button class='btn'>
-          <img src='{% static "images/profile.png" %}' width="24px" height="24px">
-        </button>
-      </form>
+        <div class="dropdown">
+          <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                  <img src='{% static "images/profile.png" %}' width="24px" height="24px">
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <li><a class="dropdown-item" href="/logout">Logout</a></li>
+          </ul>
+        </div>
+        <div>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </div>
       </div>
     </div>
 </nav>
@@ -74,7 +100,7 @@
                 <div class="card">
                     <div class="card-body">
                         <div style="border:1px solid grey;border-radius:15px;background-color:rgba(0,0,0,0.1)">
-                            <a class="btn" href="/test">
+                            <a class="btn" href="/leave">
                                 <img src='{% static "images/leaves.png" %}'>
                             </a>
                         </div>
@@ -86,7 +112,7 @@
                 <div class="card">
                     <div class="card-body">
                         <div style="border:1px solid grey;border-radius:15px;background-color:rgba(0,0,0,0.1)">
-                            <a class="btn" href="/test">
+                            <a class="btn" href="/calender">
                                 <img src='{% static "images/calendar.png" %}'>
                             </a>
                         </div>
