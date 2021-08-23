@@ -17,10 +17,10 @@
     <div class="col-4">
     </div>
     <div class="col-4">
-        <div style="background-color:white; padding:30px;">
+        <div style="background-color:white; padding:30px;border-radius:50px;">
             <center>
                 <img src="{% static 'images/ojas.png' %}">
-            </center>
+
             <br><br>
             <form action="" method="post" novalidate>
                   {% csrf_token %}
@@ -32,8 +32,9 @@
                   {% for fm in form %}
                    {{fm.label_tag}} {{fm}} {{fm.errors|striptags}} <br><br>
                   {% endfor %}
-                  <input type="submit" value="Login">
+                  <input type="submit" class="btn btn-primary" value="Login">
             </form>
+                </center>
         </div>
     </div>
 </div>
