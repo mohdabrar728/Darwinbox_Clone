@@ -14,6 +14,8 @@ class EmployeeSearch(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['form'] = EmployeeDetailsForms
+        context['time'] = self.request.session['time']
+        context['ip'] = self.request.get_signed_cookie('ip', default='Not Detected', salt='ip')
         return context
 
     def post(self, request):

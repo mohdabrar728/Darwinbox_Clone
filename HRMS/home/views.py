@@ -15,6 +15,8 @@ class Home(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['user'] = self.request.user
-        context['time'] = self.request.session.get('time', datetime.now())
+        # context['time'] = self.request.session.get('time', datetime.now())
+        self.request.session['time'] = datetime.now().strftime('%d-%m-%y %H:%M:%S')
+        context['time'] = self.request.session['time']
         context['ip'] = self.request.get_signed_cookie('ip', default='Not Detected', salt='ip')
         return context
