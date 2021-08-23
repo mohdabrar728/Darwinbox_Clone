@@ -4,4 +4,4 @@ from .models import LeaveModel
 class LeaveForm(forms.ModelForm):
     class Meta:
         model = LeaveModel
-        fields = '__all__'
+        exclude = ['user']

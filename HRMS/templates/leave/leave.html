@@ -18,6 +18,14 @@
                 <input type="submit" value="submit">
             </center>
         </form>
+        {% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <h1 class='alert alert-green'>{{ message }}</h1>
+    {% endfor %}
+</ul>
+{% endif %}
+
     </div>
 </div>
 

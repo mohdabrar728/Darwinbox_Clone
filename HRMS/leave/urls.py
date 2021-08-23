@@ -1,6 +1,6 @@
 from django.urls import path
-from .views import LeaveView
+from .views import leaveView
 
 urlpatterns = [
-    path('leave', LeaveView.as_view(), name='leave'),
+    path('leave', leaveView, name='leave'),
 ]
