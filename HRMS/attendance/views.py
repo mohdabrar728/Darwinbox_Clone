@@ -27,11 +27,10 @@ class ClockInOut(View):
             data = Attendance1(user=request.user, date=date, clock_in=time, status='present')
             data.save()
         else:
-            data = Attendance1.objects.get(user=request.user)
-            hours = (int(time[:2])-int(str(data.clock_in)[:2]))
-            minets = (int(time[3:5])-int(str(data.clock_in)[3:5]))
-            print(hours)
-            print(minets)
-            Attendance1.objects.filter(user=request.user).update(clock_out=time,total_work_duration=f'{hours}:{minets}')
+            data = Attendance1.objects.filter(user=request.user, date=date)
+            for i in data:
+                data = i
+            main = datetime.datetime(int(date[0:4]), int(date[5:7]), int(date[8:10]), int(time[0:2]), int(time[3:5]), int(time[6:8]))-datetime.datetime.combine(data.date,data.clock_in)
+            Attendance1.objects.filter(user=request.user, date=date).update(clock_out=time,total_work_duration=main)
 
         return HttpResponseRedirect('/')
